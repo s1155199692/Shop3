@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #50b3a2;
+      color: white;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #e8491d 3px solid;
+    }
+    header a {
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    header ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+    header li {
+      float: left;
+      display: inline;
+      padding: 0 20px 0 20px;
+    }
+    header #branding {
+      float: left;
+    }
+    header #branding h1 {
+      margin: 0;
+    }
+    header nav {
+      float: right;
+      margin-top: 10px;
+    }
+    header .highlight, header .current a {
+      color: #e8491d;
+      font-weight: bold;
+    }
+    header a:hover {
+      color: #ffffff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div id="branding">
+      <h1><span class="highlight">Admin</span> Panel</h1>
+    </div>
+    <nav>
+      <ul>
+        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="categories_management.html">Manage Categories</a></li>
+        <li><a href="product_management.html">Manage Products</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Insert Category Form -->
+  <h2>Insert New Product</h2>
+  <form action="insert_product.php" method="post">
+    <label for="catName">Product Name:</label><br>
+    <input type="text" id="catName" name="catName"><br><br>
+    <input type="submit" value="Insert Product">
+  </form>
+
+  <hr>
+
+  <!-- Update Category Form -->
+  <h2>Update Product</h2>
+  <form action="update_product.php" method="post">
+    <label for="catId">Product ID:</label><br>
+    <input type="text" id="catId" name="catId"><br><br>
+    <label for="newCatName">New Product Name:</label><br>
+    <input type="text" id="newCatName" name="newCatName"><br><br>
+    <input type="submit" value="Update Product">
+  </form>
+
+  <hr>
+
+  <!-- Delete Category Form -->
+  <h2>Delete Product</h2>
+  <form action="delete_product.php" method="post">
+    <label for="delCatId">Product ID:</label><br>
+    <input type="text" id="delCatId" name="delCatId"><br><br>
+    <input type="submit" value="Delete Product">
+  </form>
+
+  <hr>
+
+  <!-- Upload Category Image Form -->
+  <h2>Upload Product Image</h2>
+  <form action="upload_product_image.php" method="post" enctype="multipart/form-data">
+    <label for="catImgId">Product ID:</label><br>
+    <input type="text" id="catImgId" name="catImgId"><br><br>
+    <label for="catImage">Select image:</label><br>
+    <input type="file" id="catImage" name="catImage" accept="image/*"><br><br>
+    <input type="submit" value="Upload Image" name="submit">
+  </form>
+</div>
+
+
+<script src="product_management.js"></script>
+</body>
+</html>
